@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation</title>
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="css/jquery.multiselect.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<style type="text/css">
+		.error{
+			color: red;
+		}
+		.e1{
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<h2 class="text-center">Registration Form</h2>
+	<div class="container">
+		<div class="row">
+			<div class="col-8 mx-auto">
+				<form action="" method="post" enctype="multipart/form-data" id="form">
+					<div class="form-group">
+						<label for="fname">First Name</label>
+						<input class="form-control" type="text" name="fname" id="fname" placeholder="Enter First Name">
+					</div>
+					<div class="form-group">
+						<label>Last Name</label>
+						<input class="form-control" type="text" name="lname" id="lname" placeholder="Enter Last Name">
+					</div>
+					<div class="form-group">
+						<label>Email</label>
+						<input class="form-control" type="email" name="email" id="email" placeholder="Enter Email">
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<input class="form-control" type="password" name="pass" id="pass" placeholder="Enter Password" autocomplete>
+					</div>
+					<div class="form-group">
+						<label>Confirm Password</label>
+						<input class="form-control" type="password" name="cpass" id="cpass" placeholder="Enter Password" autocomplete>
+					</div>
+					<div class="form-group">
+						<label>Company</label>
+						<input class="form-control" type="text" name="company" id="company" placeholder="Enter company">
+					</div>
+					<div class="form-group">
+						<label>Logo</label>
+						<input class="form-control" type="text" name="logo" id="logo">
+					</div>
+					<div class="form-group">
+						<label>Country</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+									<select class="form-control" name="country" id="country">
+										<option value="" disabled selected>Select Country</option>
+
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label>State</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+									<select class="form-control" name="state" id="state">
+										<option value="" disabled selected>Select State</option>
+
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label>City</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+									<select class="form-control" name="city" id="city">
+										<option value="" disabled selected>Select City</option>
+
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="images">Company Images</label>
+						<div class="form-group" id="gallery">
+							<div>
+								<img src="images/Default.png" name="mainImg" id="mainImg" width="300" height="300" class="mx-auto">
+								<p id="selectImg"><b>Selected Image</b></p>
+							</div>
+							
+							<div class="container">
+								<div class="row">
+									<div class="col-12" id="multiImg">
+										<div class="oneImg">
+											<img src="images/img2.jpg" class="thumble" width="100" height="100">
+											<button type="button" class="deleteImg">Delete</button>
+										</div>
+										<div class="oneImg">
+											<img src="images/img1.jpg" class="thumble" width="100" height="100"><button type="button" class="deleteImg">Delete</button>
+										</div>
+										<div class="oneImg">
+											<img src="images/img3.jpg" class="thumble" width="100" height="100"><button type="button" class="deleteImg">Delete</button>
+										</div class="oneImg">
+										<div class="oneImg">
+											<img src="images/img4.jpg" class="thumble" width="100" height="100"><button type="button" class="deleteImg">Delete</button>
+										</div>
+										<div class="oneImg">
+											<img src="images/img5.jpg" class="thumble" width="100" height="100"><button type="button" class="deleteImg">Delete</button>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label>description</label>
+						<input class="form-control" type="text" name="description" id="description" placeholder="Enter description">
+					</div>
+					<div class="form-group">
+						<label>Phone</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-3">
+									<select class="form-control" name="phoneType" id="phoneType">
+										<option value="" disabled selected>Type</option>
+										<option value="phone">Phone</option>
+										<option value="fax">Fax</option>
+										<option value="mobile">Mobile</option>
+									</select>
+								</div>
+								<div class="col-8">
+									<input class="form-control" type="tel" name="phone" id="phone" placeholder="965-655-5555">
+									<input class="form-control" type="tel" name="phone" id="fax" placeholder="+1-655-5555" style="display: none;">
+								</div>
+								<label for="phone" class="error" style="display: none;"></label>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label>Company Type</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+									<select class="form-control" name="companyType" id="companyType">
+										<option value="" disabled selected>Company Type</option>
+										<option value="public company">Public companies</option>
+										<option value="private companies">Private companies</option>
+										<option value="one person company">One person company</option>
+										<option value="other">Other</option>
+									</select>
+								</div>
+								<div class="col-12 mt-2">
+									<input class="form-control" type="text" name="othertype" id="othertype" placeholder="Enter which Type of your Company" style="display: none;">
+								</div>
+								<label for="companyType" class="error" style="display: none;"></label>
+								<label for="othertype" class="error" style="display: none;"></label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label>Start date of Company</label>
+						<input class="form-control" type="date" name="starDate" id="startDate">
+					</div>
+
+					<div class="form-group">
+						<h4>companyProduct</h4>
+						<select class="form-control" multiple name="companyProduct[]" id="companyProduct">
+							<option value="angular">Angular</option>
+							<option value="css">CSS</option>
+							<option value="design">Graphic Design</option>
+							<option value="ember">Ember</option>
+							<option value="html">HTML</option>
+							<option value="ia">Information Architecture</option>
+							<option value="javascript">Javascript</option>
+							<option value="mech">Mechanical Engineering</option>
+							<option value="meteor">Meteor</option>
+							<option value="node">NodeJS</option>
+							<option value="plumbing">Plumbing</option>
+							<option value="python">Python</option>
+							<option value="rails">Rails</option>
+							<option value="react">React</option>
+							<option value="repair">Kitchen Repair</option>
+							<option value="ruby">Ruby</option>
+							<option value="ui">UI Design</option>
+							<option value="ux">User Experience</option>
+						</select>
+						<label for="companyProduct[]" class="error" style="display: none;"></label>
+					</div>
+					<fieldset>
+						<legend style="font-size: 18px;">Hobbies</legend>
+						<input type="checkbox" name="hobbies[]" value="cricket"> Cricket <br>
+						<input type="checkbox" name="hobbies[]" value="readingbooks"> Reading Books <br>
+						<input type="checkbox" name="hobbies[]" value="cooking"> Cooking <br>
+						<label for="hobbies[]" class="error" style="display: none;"></label>
+					</fieldset>
+					<br>
+					<fieldset>
+						<legend style="font-size: 18px;">Is Company exist?</legend>
+						<input type="radio" name="exist[]" value="yes">Yes <br>
+						<input type="radio" name="exist[]" value="no">No<br>
+						<label for="exist[]" class="error" style="display: none;"></label>
+					</fieldset>
+					<br>
+					<input type="checkbox" name="check">Agree Terms And Conditions <br>
+					<label for="check" class="error" style="display: none;"></label>
+					<div class="form-group">
+						<input class="btn btn-primary btn-block" type="submit" name="submit">
+					</div>
+				</form>
+				<h3 id="numInvalid"></h3>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- jQuery cdn -->
+	<script
+	src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="js/jquery.multiselect.js"></script>
+	<!-- jQuery Validation Plugin -->
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<!-- Addition rules -->
+	<script type="text/javascript" src="js/additional-methods.min.js"></script>
+
+	<!-- Bootstrap js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<!-- Custom Js -->
+	<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
